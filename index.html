@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>Admin panel</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="components/lable.css"/>
+    <link rel="stylesheet" type="text/css" href="components/inputRangeBlock.css"/>
+    <link rel="stylesheet" type="text/css" href="components/dropdownBlock.css"/>
+    <link rel="stylesheet" type="text/css" href="components/icoButton.css"/>
+    <link rel="stylesheet" type="text/css" href="components/inputButton.css"/>
+    <link rel="stylesheet" type="text/css" href="components/table.css"/>
+    <link rel="stylesheet" type="text/css" href="components/style.css"/>
+</head>
+<body>
+    <div class="panel">
+        <div class="panel__header">
+            <div class="title">Список заказов</div>
+            <div class="icoButton ico-button_swichTheme">
+                <div class="icoButton__ico"><img src="components/icons/sun.svg"></div>
+                <div class="icoButton__button">Сменить тему</div>
+            </div>
+        </div>
+        <div class="panel__filters">
+            <div class="panel__fastFilterBlock">
+                <div class="buttonInput">
+                    <input class="inputbox inputbox_orderNumOrFIO" title="Введите номер заказа или ФИО"/>
+                    <div class="icoButton ico-button_colored ico-button_blueBack">
+                        <div class="icoButton__ico"><img src="components/icons/filter.svg"></div>
+                        <div class="icoButton__button">Фильтры</div>
+                    </div>
+                </div>
+                <div class="icoButton ico-button_loadStatus">
+                    <div class="icoButton__ico"><img src="components/icons/refresh.svg"></div>
+                    <div class="icoButton__button">Загрузка</div>
+                </div>
+            </div>
+            <div class="panel__extendedFilterBlock">
+                <div class="inputRangeBlock">
+                    <div class="inputRangeBlock__title">Дата оформления</div>
+                    <div class="inputRangeBlock__inputs">
+                        <input class="inputRangeBlock__inputFrom"/>
+                        <input class="inputRangeBlock__inputTo"/>
+                    </div>
+                </div>
+                <div class="dropDownBlock">
+                    <div class="dropDownBlock__title">Статус заказа</div>
+                    <select class="dropDownBlock__input"></select>
+                </div>
+                <div class="inputRangeBlock">
+                    <div class="inputRangeBlock__title">Сумма заказа</div>
+                    <div class="inputRangeBlock__inputs">
+                        <input class="inputRangeBlock__inputFrom"/>
+                        <input class="inputRangeBlock__inputTo"/>
+                    </div>
+                </div>
+                <div class="lable">Применить</div>
+            </div>
+        </div>
+        <div class="table">
+            <div class="table__hearder">
+                <div class="table__row table__row_header table__cell-small">
+                    <div class="table__cell table__cell_header table__cell_checkbox">
+                        <input type="checkbox">
+                    </div>
+                    <div class="table__cell table__cell_header">#</div>
+                    <div class="table__cell table__cell_header">Дата</div>
+                    <div class="table__cell table__cell_header">Статус</div>
+                    <div class="table__cell table__cell_header">Позации</div>
+                    <div class="table__cell table__cell_header">Сумма</div>
+                    <div class="table__cell table__cell_header table__cell-large">ФИО покупателя</div>
+                </div>
+            </div>
+            <div class="table__data">
+                <div class="table__row table__row_data">
+                    <div class="table__cell table__cell_data table__cell_checkbox table__cell-small">
+                        <input type="checkbox">
+                    </div>
+                    <div class="table__cell table__cell_data">1</div>
+                    <div class="table__cell table__cell_data">18.01.2020 18:00</div>
+                    <div class="table__cell table__cell_data">Выполнен</div>
+                    <div class="table__cell table__cell_data">4</div>
+                    <div class="table__cell table__cell_data">13 577р</div>
+                    <div class="table__cell table__cell_data table__cell-large">Петров Петр Петрович</div>
+                </div>
+                <div class="table__row table__row_data">
+                    <div class="table__cell table__cell_data table__cell_checkbox table__cell-small">
+                        <input type="checkbox">
+                    </div>
+                    <div class="table__cell table__cell_data">1</div>
+                    <div class="table__cell table__cell_data">19.01.2020 18:00</div>
+                    <div class="table__cell table__cell_data">Отложен</div>
+                    <div class="table__cell table__cell_data">4</div>
+                    <div class="table__cell table__cell_data">17 080р</div>
+                    <div class="table__cell table__cell_data table__cell-large">Иванов Иван Иванович</div>
+                </div>
+            </div>
+            <div class="table__footer">
+                <div class="table__row table__row_footer">
+                    <div class="table__cell table_cell_footer_leftBox">
+                        <div class="lable">Выбрано записей: 5</div>
+                        <div class="icoButton ico-button_colored ico-button_blueBack">
+                            <div class="icoButton__ico"><img src="components/icons/pencil.svg"></div>
+                            <div class="icoButton__button">Изменить статус</div>
+                        </div>
+                        <div class="icoButton ico-button_colored ico-button_redBack">
+                            <div class="icoButton__ico"><img src="components/icons/bin.svg"></div>
+                            <div class="icoButton__button">Удалить</div>
+                        </div>
+                    </div>
+                    <div class="table__cell table_cell_footer_rightBox">
+                        <div class="table__pagination">
+                            <div class="table__pagination-item">
+                                <div class="table__pagination-item__text">1</div>
+                            </div>
+                            <div class="table__pagination-item">
+                                <div class="table__pagination-item__text">2</div>
+                            </div>                            
+                            <div class="table__pagination-item">
+                                <div class="table__pagination-item__text">3</div>
+                            </div>
+                            <div class="table__pagination-item">
+                                <div class="table__pagination-item__text">...</div>
+                            </div>
+                            <div class="table__pagination-item">
+                                <div class="table__pagination-item__text">10</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

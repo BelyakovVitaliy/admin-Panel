@@ -1,0 +1,124 @@
+.table {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    height: 520px;
+}
+
+.table__header {
+    flex-grow: 1;
+}
+
+.table__footer {
+    flex-grow: 1;
+}
+
+.table__row_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 8px;
+    height: 40px;
+    background: #459DF5;
+    align-items: center;
+}
+
+.table__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.table__cell {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    padding: 12px 8px;
+}
+
+.table__cell-large {
+    flex-grow: 3;
+}
+
+.table__cell-small {
+    flex-grow: 1;
+}
+
+.table__cell_header {
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.table__data {
+    flex-grow: 11;
+}
+
+.table__cell_header:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.table__row_data {
+    padding: 0px 8px;
+    border-bottom: 1px solid #EBF0F5;
+
+}
+
+.table__row_footer {
+    background: #EBF0F5;
+}
+
+.table__row_footer {
+    justify-content:space-between;
+}
+
+.table_cell_footer_leftBox {
+    width: auto;
+    display: flex;
+    justify-content: left;
+    flex-grow: 10;
+}
+
+
+.table_cell_footer_rightBox {
+    width: auto;
+    flex-grow: 1;
+}
+
+.table__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.table__pagination-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.table__pagination-item:active {
+    background: #459DF5;
+}
+
+.table__pagination-item:active > .table__pagination-item__text {
+    color: #FFFFFF;
+}
+
+
+.table__pagination-item__text {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: #459DF5;
+}
