@@ -1,0 +1,48 @@
+.table {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    height: 520px;
+}
+
+.table__header {
+    flex-grow: 1;
+}
+
+.table__footer {
+    flex-grow: 1;
+}
+
+.table__data {
+    flex-grow: 11;
+}
+
+.table__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.table__pagination-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.table__pagination-item:active {
+    background: #459DF5;
+}
+
+.table__pagination-item:active > .table__pagination-item__text {
+    color: #FFFFFF;
+}
+
+.table__pagination-item__text {
+    font-family: Ubuntu;
+    font-size: 13px;
+    line-height: 16px;
+    color: #459DF5;
+}
