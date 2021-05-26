@@ -1,90 +1,57 @@
-import { connect } from 'react-redux'
+import {connect, useDispatch, useSelector} from 'react-redux'
 import { showNotification } from '../NotificationBox/action'
-import React from "react";
-import {DateRangeBlock} from "../DateRangeBlock/DateRangeBlock";
+import React, {useState} from "react";
 import IcoButton from "../IcoButton/IcoButton";
-import sunIcon from '../../../public/icons/sun.svg'
-import refresh from '../../../public/icons/refresh.svg'
-import filterIcon from '../../../public/icons/filter.svg'
-import ButtonInput from "../ButtonInput/ButtonInput";
-import './AdminPanel.css'
-import DropDownBlock from "../DropDownBlock/DrowDownBlock";
+import sunIcon from '../static/icons/sun.svg'
 import Table from "../Table/Table";
+import {columns, data} from "./constants";
+import styles from "./AdminPanel.module.css"
+import {getData, pageCount} from "./server";
+import ExtendedFilters from "../Filters/ExtendedFilters";
+import refresh from "../static/icons/refresh.svg";
+import filterIco from "../static/icons/filter.svg";
+import {toggleFilterVisible} from "../Filters/action";
+import {FILTER_REDUCER_NAME} from "../Filters/reducer";
+import {STYLE} from "../IcoButton/constants";
+import {Input} from "../Input/Input";
 
 const AdminPanel = (props) => {
 
-    const filters = {
-        orderDate: {
-            dateBegin: null, dateEnd: null
-        },
-        orderCost: {
-            costFrom: null, costEnd: null
-        }
+
+    // const toggle = () => {
+    //     props.showError( {
+    //         header: "3343",
+    //         body: "343"
+    //     })
+    // };
+
+    const [page, setPage] = useState(1);
+
+    const extendedFiltersVisible = useSelector(state => state[FILTER_REDUCER_NAME].filterVisible);
+    const dispatch = useDispatch();
+    const toggleVisible = () => {
+        dispatch(toggleFilterVisible())
     };
-
-    const columns = [
-        { name: '#'},
-        { name: 'Дата'},
-        { name: 'Статус'},
-        { name: 'Позации'},
-        { name: 'Сумма'},
-        { name: 'ФИО покупателя'}
-    ];
-
-    const data = [
-        {
-            '#': 'll',
-            'Дата': '01.01.2020',
-            'Статус': 'В работе',
-            'Позации': '2',
-            'Сумма': '2000',
-            'ФИО покупателя': 'Иванов Иван Иванович'
-        },
-        {
-            '#': 'll',
-            'Дата': '02.01.2020',
-            'Статус': 'Выполнен',
-            'Позации': '2',
-            'Сумма': '4000',
-            'ФИО покупателя': 'Петров Петр Петрович'
-        }
-    ];
 
 
     return (
-        <div className="panel">
-            <div className="panel__header">
-                <div className="panel__title">Список заказов</div>
+        <div className={styles.panel}>
+            <div className={styles.header}>
+                <div className={styles.title}>Список заказов</div>
                 <IcoButton iconSrc={sunIcon} title={"Сменить тему"}/>
             </div>
-            <div className="panel__filters">
-                <div className="panel__fastFilterBlock">
-                    <ButtonInput buttonText={"Фильтры"} inputTitle={"Введите ФИО"} buttonIco={filterIcon}/>
+            <div className={styles.filters}>
+                <div className={styles.fastFilterBlock}>
+                    <div className={styles.buttonInput}>
+                        <Input placeHolder={'Введите ФИО'}/>
+                        <IcoButton title={"Фильтры"} styleType={STYLE.SIMPLE} iconSrc={filterIco} onClickHandler={toggleVisible}/>
+                    </div>
                     <IcoButton title={"Загрузка"} iconSrc={refresh}/>
                 </div>
-                <div className="panel__extendedFilterBlock">
-                    <DateRangeBlock
-                        title={"Дата заказа"}
-                        dateBegin={filters.orderDate.dateBegin}
-                        dateEnd={filters.orderDate.dateEnd}
-                    />
-                    <DropDownBlock title={"Статус заказа"}/>
-                    <DateRangeBlock
-                        title={"Сумма заказа"}
-                        dateBegin={filters.orderCost.costFrom}
-                        dateEnd={filters.orderCost.costEnd}
-                    />
-                    <div className="lable">Применить</div>
-                </div>
+                {extendedFiltersVisible && <ExtendedFilters/>}
             </div>
-            <Table columns={ columns } data={ data } addCheckBox/>
+            <Table columns={ columns } data={ getData(page) } pageCount={pageCount()}/>
         </div>
     )};
 
-
-    const mapDispatchToProps = (dispatch) => ({
-        dispatch,
-        show: (message) => dispatch(showNotification(message))
-    });
-
-export default connect(null, mapDispatchToProps)(AdminPanel)
+export default AdminPanel

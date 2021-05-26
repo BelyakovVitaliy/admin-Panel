@@ -4,38 +4,47 @@
     flex-direction: row;
     align-items: center;
     font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
     font-size: 13px;
     line-height: 16px;
     color: #459DF5;
 }
 
-.icoButton__ico {
+.ico {
     width: 16px;
     height: 16px;
     margin-right: 5px;
 }
 
-.ico-button_colored  > .icoButton__ico {
+.colored  > .ico {
     width: 20px;
     height: 20px;
 }
 
-
-.ico-button_colored {
+.colored {
     padding: 8px 16px;
     margin-left: 10px;
     border-radius: 4px;
     font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
     font-size: 13px;
     line-height: 16px;
     color: #FFFFFF;
 }
 
 
-.ico-button_blueBack {
+.mainColor {
+    composes: colored;
     background: #459DF5;
 }
 
-.ico-button_redBack {
+.attentionColor {
+    composes: colored;
     background: #F53152;
+}
+
+.toggable {
+    cursor: pointer;
 }

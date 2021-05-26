@@ -1,0 +1,24 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.data {
+    composes: row;
+    padding: 0 8px;
+    border-bottom: 1px solid #EBF0F5;
+}
+
+.footer {
+    composes: row;
+    background: #EBF0F5;
+    justify-content:space-between;
+}
+
+.header {
+    composes: row;
+    padding: 0 8px;
+    height: 40px;
+    background: #459DF5;
+}

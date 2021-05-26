@@ -1,11 +1,17 @@
 import React from "react";
-import './IcoButton.css'
+import styles from './IcoButton.module.css'
+import cc from 'classcat'
 
-const IcoButton = ( {iconSrc, title }) => {
+const IcoButton = ( {iconSrc, title, styleType, onClickHandler }) => {
+    const style = cc({
+            [styles.icoButton]: true,
+            [styles[styleType]]: true,
+            [styles.toggable]: !!onClickHandler,
+        });
     return (
-        <div className="icoButton ico-button_switchTheme">
-            <div className="icoButton__ico"><img src={iconSrc} alt={"1"}/></div>
-            <div className="icoButton__button">{title}</div>
+        <div className={style} onClick={onClickHandler}>
+            {iconSrc ? <div className={styles.ico}><img src={iconSrc} alt={title}/></div> : null}
+            <div>{title}</div>
         </div>
     )
 };

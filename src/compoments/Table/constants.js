@@ -1,8 +1,9 @@
 import React from "react";
-import Cell from "./Row/Cell/Cell";
 
-export const checkBox = <input type="checkbox">
+export const pageSize = 10;
 
-    export const checkBoxCell = (
-    <Cell item={ checkBox }/>
-);
+export const maxPagination = 3;
+
+export const HEADER = "HEADER";
+export const DATA = "DATA";
+export const FOOTER = "FOOTER";

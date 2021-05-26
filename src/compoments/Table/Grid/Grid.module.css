@@ -1,0 +1,7 @@
+
+.data {
+    flex-grow: 11;
+    height: 40rem;
+    overflow:scroll;
+}
+

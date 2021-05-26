@@ -1,22 +1,22 @@
-import './Table.css'
-import React from "react";
-import Row from "./Row/Row";
+import React, {Fragment} from "react";
+import {Header} from "./Header/Header";
+import {Data} from "./Grid/Grid";
+import {Footer} from "./Footer/Footer";
+import styles from './Table.module.css'
 
-
-const Table = ({ columns, data, addCheckBox }) => {
-
-    return (
-        <div className="table">
-            <div className="table__header">
-                <Row columns={columns} addCheckBox={addCheckBox} header/>
-            </div>
-            <div className="table__data">
-                { data.map( row => {
-                    return <Row columns={columns} rowData={row} addCheckBox={addCheckBox} />
-                })}
-            </div>
-        </div>
-    );
+const Table = ( {columns, data, pageCount }) => {
+    const checkBoxHandler = props => {};
+    return <div className={styles.table}>
+            <Header
+                columns={columns}
+                onCheckboxClick={checkBoxHandler}
+            />
+            <Data
+                columns={columns}
+                data={data}
+                onCheckboxClick={checkBoxHandler}
+            />
+            <Footer pageCount={pageCount}/>
+    </div>
 };
-
 export default Table;

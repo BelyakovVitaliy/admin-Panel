@@ -1,0 +1,37 @@
+.cell {
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    padding: 12px 8px;
+}
+
+.large {
+    composes: cell;
+    flex: 15;
+}
+
+.small {
+    composes: cell;
+    flex: 3;
+}
+
+.tiny {
+    composes: cell;
+    flex: 1;
+}
+
+.header {
+    composes: cell;
+    color: #FFFFFF;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.header:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
