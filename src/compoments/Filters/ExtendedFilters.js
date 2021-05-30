@@ -1,36 +1,43 @@
-import {InputRange} from "../DateRangeBlock/InputRange";
-import DropDownBlock from "../DropDownBlock/DrowDown";
-import {Lable} from "../Lable/Lable";
-import React from "react";
+import {InputRange} from "../InputRange/InputRange";
+import DropDown from "../DropDown/DrowDown";
+import React, {useState} from "react";
 import styles from "./ExtendedFilters.module.css";
 import {STATUSES} from "../AdminPanel/constants";
 import IcoButton from "../IcoButton/IcoButton";
-
-const extendedFilters = {
-    orderDate: {
-        dateBegin: null, dateEnd: null
-    },
-    orderCost: {
-        costFrom: null, costEnd: null
-    }
-};
-
+import {useDispatch} from "react-redux";
+import {setFilters} from "../redux/actions";
+import {DATE_TYPE, NUMBER_TYPE, TEXT_TYPE} from "./constants";
+import {createFilter} from "../AdminPanel/utils";
 
 const ExtendedFilters = () => {
+
+    const [state, setState] = useState({filters: {}});
+
+    const dispatch = useDispatch();
+
+    const handleChange = (filterName, fieldName, value, filterType = TEXT_TYPE) => {
+        setState({...state, filters: {...state.filters, [filterName] : createFilter(fieldName, value, filterType)}});
+    };
+
+    const applyFilters = () => {
+        dispatch(setFilters(state.filters))
+    };
+
     return <div className={styles.extendedFilterBlock}>
             <InputRange
                 title={"Дата заказа"}
-                type={"date"}
-                begin={extendedFilters.orderDate.dateBegin}
-                end={extendedFilters.orderDate.dateEnd}
+                type={DATE_TYPE}
+                name={"Дата"}
+                onChange={handleChange}
             />
-            <DropDownBlock title={"Статус заказа"} values={STATUSES}/>
+            <DropDown title={"Статус заказа"} name={"Статус"} values={STATUSES} onChange={handleChange}/>
             <InputRange
                 title={"Сумма заказа"}
-                begin={extendedFilters.orderCost.costFrom}
-                end={extendedFilters.orderCost.costEnd}
+                type={NUMBER_TYPE}
+                name={"Сумма"}
+                onChange={handleChange}
             />
-            <IcoButton title={"Применить"}/>
+            <IcoButton title={"Применить"} onClickHandler={applyFilters}/>
         </div>
 };
 

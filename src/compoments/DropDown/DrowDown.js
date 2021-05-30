@@ -1,12 +1,16 @@
 import React from "react";
 import styles from './DrowDown.module.css'
-const DropDownBlock = ({title, values}) => {
+const DropDown = ({title, name, values, onChange}) => {
+
+    const onFiledInput = ({target}) => {
+        onChange(name, 'value', target.value)
+    };
 
     const valuesWithEmpty = [null, ...values];
     return (
-        <div className={styles.dropDownBlock}>
+        <div className={styles.dropDown}>
             <div className="dropDownBlock__title">{title}</div>
-            <select className={styles.input}>
+            <select className={styles.input} onChange={onFiledInput}>
                 {valuesWithEmpty.map(value => {
                     return <option>{value}</option>
                 })}
@@ -15,4 +19,4 @@ const DropDownBlock = ({title, values}) => {
     )
 };
 
-export default DropDownBlock
+export default DropDown

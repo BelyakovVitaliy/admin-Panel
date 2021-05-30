@@ -3,6 +3,6 @@ import {SIZE} from "./constants";
 import React from "react";
 
 
-export const CheckBoxCell = (selectHandler) => {
-    return selectHandler ? <Cell item={<input type="checkbox" onClick={selectHandler}/>} column={{size: SIZE.TINY}}/> : null
+export const CheckBoxCell = ({id, checked, onClick}) => {
+    return  <Cell item={<input id={id} checked={checked ? "checked": null} type="checkbox" onChange={() => onClick(id)}/>} column={{size: SIZE.TINY}}/>
 }

@@ -2,14 +2,14 @@ import styles from './Cell.module.css'
 import React from "react";
 import cc from "classcat"
 import {SIZE} from "./constants";
-import {HEADER} from "../../constants";
+import {HEADER, DATA} from "../../constants";
 
 
-const defineFormatter = (column) => column.formatter || (({ value }) => value);
+const defineFormatter = (column, type) => (type === DATA && column.formatter) || (({ value }) => value);
 
 const Cell = ( { item, column = {}, type }) => {
 
-    const Formatter = defineFormatter(column);
+    const Formatter = defineFormatter(column, type);
 
     const style = cc({
         [styles.cell]: true,

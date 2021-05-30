@@ -1,29 +1,13 @@
-.pagination {
+.footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    background: #EBF0F5;
+    justify-content:space-between;
 }
 
-.paginationItem {
+.buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 4px 8px;
-    border-radius: 4px;
-}
-
-.paginationItem:hover {
-    background: #459DF5;
-}
-
-.paginationItem:hover > .paginationItemText {
-    color: #FFFFFF;
-}
-
-.paginationItemText {
-    font-family: Ubuntu;
-    font-size: 13px;
-    line-height: 16px;
-    color: #459DF5;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.4rem;
 }

@@ -1,21 +1,20 @@
-import {connect, useDispatch, useSelector} from 'react-redux'
-import { showNotification } from '../NotificationBox/action'
-import React, {useState} from "react";
+import {useDispatch, useSelector} from 'react-redux'
+import React from "react";
 import IcoButton from "../IcoButton/IcoButton";
 import sunIcon from '../static/icons/sun.svg'
 import Table from "../Table/Table";
-import {columns, data} from "./constants";
+import {columns} from "./constants";
 import styles from "./AdminPanel.module.css"
-import {getData, pageCount} from "./server";
 import ExtendedFilters from "../Filters/ExtendedFilters";
 import refresh from "../static/icons/refresh.svg";
 import filterIco from "../static/icons/filter.svg";
-import {toggleFilterVisible} from "../Filters/action";
-import {FILTER_REDUCER_NAME} from "../Filters/reducer";
+import {toggleFilterVisible, REDUCER_NAME, setFilters} from "../redux/actions";
 import {STYLE} from "../IcoButton/constants";
 import {Input} from "../Input/Input";
+import {createFilter} from "./utils";
+import {TEXT_TYPE} from "../Filters/constants";
 
-const AdminPanel = (props) => {
+const AdminPanel = () => {
 
 
     // const toggle = () => {
@@ -25,14 +24,21 @@ const AdminPanel = (props) => {
     //     })
     // };
 
-    const [page, setPage] = useState(1);
-
-    const extendedFiltersVisible = useSelector(state => state[FILTER_REDUCER_NAME].filterVisible);
+    const pageCount = useSelector((state) => state[REDUCER_NAME].pageCount);
+    const data = useSelector((state) => state[REDUCER_NAME].data);
+    const extendedFiltersVisible = useSelector(state => state[REDUCER_NAME].filterVisible);
     const dispatch = useDispatch();
     const toggleVisible = () => {
         dispatch(toggleFilterVisible())
     };
 
+    const onChange = ({target}) => {
+        const value = target.value;
+        const filter = createFilter('value', value, TEXT_TYPE, true);
+        dispatch(setFilters({
+            ["ФИО покупателя"]:filter
+        }))
+    };
 
     return (
         <div className={styles.panel}>
@@ -43,14 +49,14 @@ const AdminPanel = (props) => {
             <div className={styles.filters}>
                 <div className={styles.fastFilterBlock}>
                     <div className={styles.buttonInput}>
-                        <Input placeHolder={'Введите ФИО'}/>
+                        <Input placeHolder={'Введите ФИО'} onChange={onChange}/>
                         <IcoButton title={"Фильтры"} styleType={STYLE.SIMPLE} iconSrc={filterIco} onClickHandler={toggleVisible}/>
                     </div>
                     <IcoButton title={"Загрузка"} iconSrc={refresh}/>
                 </div>
                 {extendedFiltersVisible && <ExtendedFilters/>}
             </div>
-            <Table columns={ columns } data={ getData(page) } pageCount={pageCount()}/>
+            <Table columns={ columns } data={data} pageCount={pageCount}/>
         </div>
     )};
 
