@@ -1,0 +1,16 @@
+.input {
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 2rem;
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+input[type="checkbox"] {
+    filter: var(--checkbox-color-filter);
+}
+
+.label {
+    margin: 0;
+}

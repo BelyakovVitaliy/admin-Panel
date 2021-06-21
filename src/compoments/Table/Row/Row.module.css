@@ -1,0 +1,32 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.data {
+    composes: row;
+    padding: 0 8px;
+    border-bottom: 1px solid var(--row-border-color);
+}
+
+.header {
+    composes: row;
+    padding: 0 8px;
+    height: 40px;
+    background: var(--main-color)
+}
+.headerSortDown, .headerSortUp {
+    display: flex;
+    width: 16px;
+    height: 15px;
+}
+
+.headerSortDown {
+    content: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23FFFFFF' stroke='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6H11V6.5L8.25 11H7.75L5 6.5V6Z' stroke='none' /%3E%3C/svg%3E");
+}
+
+.headerSortUp {
+    content: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23FFFFFF' stroke='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6H11V6.5L8.25 11H7.75L5 6.5V6Z' stroke='none' /%3E%3C/svg%3E");
+    transform: rotate(180deg)
+}

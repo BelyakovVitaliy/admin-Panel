@@ -1,0 +1,16 @@
+.new {
+    color: black;
+}
+.completed {
+    color: #0FB86480;
+}
+.canceled {
+    color: gray;
+}
+
+.calculation {
+    color: black;
+}
+.delayed {
+    color: black;
+}

@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 48px 0;
+    background: var(--background-color);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-family: Ubuntu, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+    color: var(--cell-text-color);
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.fastFilterBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex: 2;
+}
+
+.buttonInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 2;
+}
+
+.loadStatus {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lightTheme {
+    --background-color: #FFFFFF;
+    --main-color: #459DF5;
+    --attention-color: #F53152;
+    --completed-status-color: #0FB864;
+    --delayed-status-text-color: black;
+    --delayed-status-ico-color: #FF8C56;
+    --new-status-color: #0FB864;
+    --canceled-status-color: gray;
+    --colored-button-text-color: #FFFFFF;
+    --button-text-color: #459DF5;
+    --border-color: #459DF5;
+    --extended-filter-background-color: #EBF0F5;
+    --row-border-color: #EBF0F5;
+    --cell-text-color: black;
+    --cell-header-text-color: #EBF0F5;
+    --input-background-color: #FFFFFF;
+    --checkbox-color-filter: none;
+}
+.darkTheme {
+    --background-color: #2B2D33;
+    --main-color: #459DF5;
+    --attention-color: #F53152;
+    --completed-status-color: #0FB864;
+    --delayed-status-text-color: black;
+    --delayed-status-ico-color: #FF8C56;
+    --new-status-color: #0FB864;
+    --canceled-status-color: gray;
+    --colored-button-text-color: #1F2629;
+    --button-text-color: #459DF5;
+    --border-color: #459DF5;
+    --extended-filter-background-color: #1F2629;
+    --footer-background-color: #1F2629;
+    --row-border-color: #1F2629;
+    --cell-text-color: #BCC4CC;
+    --cell-header-text-color: #1F2629;
+    --input-background-color: #2B2D33;
+    --checkbox-color-filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+}
+
+.changeThemeContainer {
+    position: relative;
+}
+
+.changeThemeConfirmDialogContainer {
+    right: 22rem;
+    position: absolute;
+}

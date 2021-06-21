@@ -1,0 +1,6 @@
+.data {
+    flex-grow: 11;
+    max-height: 40rem;
+    overflow:scroll;
+}
+

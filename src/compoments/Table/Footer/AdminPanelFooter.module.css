@@ -1,0 +1,16 @@
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.changeItemContainer {
+    position: relative;
+}
+
+.changeItemConfirmDialogContainer {
+    position: absolute;
+    left: 12rem;
+    bottom: 12rem;
+}

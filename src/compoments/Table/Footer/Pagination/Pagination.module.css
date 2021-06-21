@@ -1,0 +1,32 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.paginationItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+
+.checked {
+    background: #459DF5;
+}
+
+.checked > .paginationItemText {
+    color: #FFFFFF;
+}
+
+.paginationItemText {
+    font-family: Ubuntu;
+    font-size: 13px;
+    line-height: 16px;
+    color: #459DF5;
+    cursor: pointer;
+}
