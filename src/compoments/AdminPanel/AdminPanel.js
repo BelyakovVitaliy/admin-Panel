@@ -54,23 +54,31 @@ const AdminPanel = () => {
             [styles.panel]: true,
             [styles[activeTheme]]: true
         }
-    )
+    );
+
+    const getThemeIco = () => {
+        return activeTheme === LIGHT_THEME ? sunIco : moonIco;
+    }
 
     return (
         <div className={style}>
             <div className={styles.header}>
                 <div className={styles.title}>Список заказов</div>
-                {(themeDialogVisible) ?
-                    <ConfirmDialog
-                        header={`Выберите тему`}
-                        yesText={"Светлая тема"}
-                        noText={"Темная тема"}
-                        yesHandler={() => onChangeTheme(LIGHT_THEME)}
-                        yesIco={sunIco}
-                        noHandler={() => onChangeTheme(DARK_THEME)}
-                        noIco={moonIco}
-                    /> : null}
-                <IcoButton iconComponent={sunIcon} title={"Сменить тему"} onClickHandler={onChangeThemeClick}/>
+                <div className={styles.changeThemeContainer}>
+                    <div className={styles.changeThemeConfirmDialogContainer}>
+                        {(themeDialogVisible) ?
+                            <ConfirmDialog
+                                header={`Выберите тему`}
+                                yesText={"Светлая тема"}
+                                noText={"Темная тема"}
+                                yesHandler={() => onChangeTheme(LIGHT_THEME)}
+                                yesIco={sunIco}
+                                noHandler={() => onChangeTheme(DARK_THEME)}
+                                noIco={moonIco}
+                            /> : null}
+                    </div>
+                    <IcoButton iconComponent={getThemeIco()} title={"Сменить тему"} onClickHandler={onChangeThemeClick}/>
+                </div>
             </div>
             <div className={styles.filters}>
                 <div className={styles.fastFilterBlock}>

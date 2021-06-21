@@ -25,7 +25,7 @@
 
 .header {
     composes: cell;
-    color: #FFFFFF;
+    color: var(--cell-header-text-color);;
     font-family: Ubuntu;
     font-style: normal;
     font-weight: normal;

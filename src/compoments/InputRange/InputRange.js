@@ -20,7 +20,7 @@ export const InputRange = ({ title, type= TEXT_TYPE, name, onChange }) => {
 
     return (
         <div className={styles.InputRangeBlock}>
-            <div className="InputRangeBlock__title">{title}</div>
+            <div className={styles.title}>{title}</div>
             <div className={styles.inputs}>
                 <input type={type} onChange={onFiledInput("from")} className={styles.inputFrom}/>
                 <input type={type} onChange={onFiledInput("to")} className={styles.inputTo}/>

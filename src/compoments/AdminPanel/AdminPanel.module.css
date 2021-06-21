@@ -1,5 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 .panel {
+    height: 100%;
     display: flex;
     flex-direction: column;
     padding: 32px 48px 0;
@@ -20,6 +25,7 @@
     font-size: 26px;
     line-height: 32px;
     letter-spacing: -0.2px;
+    color: var(--cell-text-color);
 }
 
 .filters {
@@ -66,6 +72,7 @@
     --extended-filter-background-color: #EBF0F5;
     --row-border-color: #EBF0F5;
     --cell-text-color: black;
+    --cell-header-text-color: #EBF0F5;
     --input-background-color: #FFFFFF;
     --checkbox-color-filter: none;
 }
@@ -85,6 +92,16 @@
     --footer-background-color: #1F2629;
     --row-border-color: #1F2629;
     --cell-text-color: #BCC4CC;
+    --cell-header-text-color: #1F2629;
     --input-background-color: #2B2D33;
     --checkbox-color-filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+}
+
+.changeThemeContainer {
+    position: relative;
+}
+
+.changeThemeConfirmDialogContainer {
+    right: 22rem;
+    position: absolute;
 }

@@ -9,7 +9,7 @@ const DropDown = ({title, name, value, values, disabled = false, onChange}) => {
     const valuesWithEmpty = [null, ...values];
     return (
         <div className={styles.dropDown}>
-            <div className="dropDownBlock__title">{title}</div>
+            <div className={styles.title}>{title}</div>
             <select className={styles.input} value={value} disabled={disabled} onChange={onChangeHandler}>
                 {valuesWithEmpty.map(value => {
                     return <option>{value}</option>

@@ -49,15 +49,19 @@ export const AdminPanelFooter = () => {
                 {editDialogVisible ?
                     <EditItem item={checkedRows[0]} onSave={saveHandler}/>
                     : null}
-                <IcoButton iconComponent={pencil} title={"Изменить статус"} styleType={STYLE.SIMPLE} onClickHandler={toggleEditFormVisible}/>
-                {(confirmDialogVisible) ?
-                    <ConfirmDialog
-                        header={`Удалить ${checkedCount} записей?`}
-                        yesText={"Да"}
-                        noText={"Нет"}
-                        yesHandler={confirmDeleteHandler}
-                        noHandler={cancelDeleteHandler}
-                    /> : null}
+                    <div className={styles.changeItemContainer}>
+                        <IcoButton iconComponent={pencil} title={"Изменить статус"} styleType={STYLE.SIMPLE} onClickHandler={toggleEditFormVisible}/>
+                        <div className={styles.changeItemConfirmDialogContainer}>
+                            {(confirmDialogVisible) ?
+                                <ConfirmDialog
+                                    header={`Удалить ${checkedCount} записей?`}
+                                    yesText={"Да"}
+                                    noText={"Нет"}
+                                    yesHandler={confirmDeleteHandler}
+                                    noHandler={cancelDeleteHandler}
+                                /> : null}
+                        </div>
+                    </div>
                 <IcoButton iconComponent={bin} title={"Удалить"} styleType={STYLE.ATTENTION} onClickHandler={toggleConfirmDialogVisible}/>
             </div>
             <Pagination pagesCount={pageCount}/>
