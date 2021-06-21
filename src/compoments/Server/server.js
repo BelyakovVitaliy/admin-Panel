@@ -1,12 +1,30 @@
 import {data, pageRowCount} from "./constants";
 import _ from 'lodash'
+import {DESC_ORDER} from "../Table/Row/constants";
 
-export const getData = (page, filters) => {
+export const getData = (page, filters, sortColumn) => {
     let result = data;
     if (filters) {
         result = filterData(result, filters)
     }
+    if (!_.isEmpty(sortColumn)) {
+        result = sortData(result, sortColumn)
+    }
     return {count: result.length, data: result.slice(pageRowCount * (page - 1), pageRowCount * page)}
+};
+
+const sortData  = (data, sortColumn) => {
+    const orderDirection = sortColumn.direction === DESC_ORDER ? 1 : -1;
+    data.sort((orderLeft, orderRight) => {
+        if (orderLeft[sortColumn.name] > orderRight[sortColumn.name]) {
+            return orderDirection
+        }
+        if (orderLeft[sortColumn.name] < orderRight[sortColumn.name]) {
+            return -1 * orderDirection
+        }
+        return 0
+    });
+    return data;
 };
 
 

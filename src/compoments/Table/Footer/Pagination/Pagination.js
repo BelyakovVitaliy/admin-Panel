@@ -18,9 +18,10 @@ export const Pagination = ({pagesCount}) => {
 
     return <nav className={styles.pagination}>
         { pagesCount > 0 ? range(1, pagesCount + 1).map(page => {
-            if (page < maxPagination + 1 || page === pagesCount) {
+            // TODO Упростить
+            if (page === 1 || page === pagesCount || (Math.abs(activePage - page) < maxPagination)) {
                 return <PaginationItem page={page} checked={activePage === page} onClick={onClick}/>
-            } else if (page === maxPagination + 1) {
+            } else if (Math.abs(activePage - page) === maxPagination) {
                 return <PaginationItem page='...'/>
             } else {
                 return null

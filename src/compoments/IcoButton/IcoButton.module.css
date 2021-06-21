@@ -1,28 +1,31 @@
-
 .icoButton {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
     font-family: Ubuntu;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
     line-height: 16px;
-    color: #459DF5;
+    color: var(--button-text-color);
 }
 
 .ico {
     width: 16px;
     height: 16px;
     margin-right: 5px;
+    fill: var(--button-text-color);
+    stroke: var(--button-text-color);
 }
 
 .colored  > .ico {
     width: 20px;
     height: 20px;
+    fill: var(--colored-button-text-color);
+    stroke: var(--colored-button-text-color);
 }
 
-.colored {
+.icoButton.colored {
     padding: 8px 16px;
     margin-left: 10px;
     border-radius: 4px;
@@ -31,20 +34,42 @@
     font-weight: normal;
     font-size: 13px;
     line-height: 16px;
-    color: #FFFFFF;
+    color: var(--colored-button-text-color);
 }
 
 
 .mainColor {
     composes: colored;
-    background: #459DF5;
+    background: var(--main-color);
 }
 
 .attentionColor {
     composes: colored;
-    background: #F53152;
+    background: var(--attention-color);
 }
 
 .toggable {
     cursor: pointer;
+}
+
+.completedColor {
+    fill: var(--completed-status-color);
+    stroke: var(--completed-status-color);
+    color: var(--completed-status-color);
+}
+
+.delayedColor, .newColor{
+    fill: var(--delayed-status-ico-color);
+    stroke: var(--delayed-status-ico-color);
+    color: var(--delayed-status-text-color);
+}
+
+.calcColor {
+    fill: var(--main-color);
+    stroke: var(--main-color);
+    color: black;
+}
+
+.canceledColor {
+    color: var(--canceled-status-color);
 }

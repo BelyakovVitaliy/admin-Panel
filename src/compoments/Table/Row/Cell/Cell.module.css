@@ -5,6 +5,7 @@
     align-items: center;
     width: 200px;
     padding: 12px 8px;
+    color: var(--cell-text-color);
 }
 
 .large {
@@ -34,4 +35,8 @@
 
 .header:hover {
     background: rgba(0, 0, 0, 0.15);
+}
+
+.checkbox {
+    cursor: pointer;
 }

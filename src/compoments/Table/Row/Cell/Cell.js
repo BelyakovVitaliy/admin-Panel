@@ -7,7 +7,7 @@ import {HEADER, DATA} from "../../constants";
 
 const defineFormatter = (column, type) => (type === DATA && column.formatter) || (({ value }) => value);
 
-const Cell = ( { item, column = {}, type }) => {
+const Cell = ( { item, column = {}, type, onClick }) => {
 
     const Formatter = defineFormatter(column, type);
 
@@ -18,8 +18,13 @@ const Cell = ( { item, column = {}, type }) => {
         [styles.small]: column.size === SIZE.SMALL,
         [styles.header]: type === HEADER
     });
-    return <div className={style}>
-        <Formatter value={item}/>
+
+    const onClickHandler = (event) => {
+        event.preventDefault();
+        onClick && onClick(column);
+    };
+    return <div className={style} onClick={onClickHandler}>
+        {item ? <Formatter value={item}/> : "-"}
     </div>
 };
 

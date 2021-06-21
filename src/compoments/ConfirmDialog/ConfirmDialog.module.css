@@ -1,0 +1,38 @@
+.confirmDialog {
+    position: fixed;
+    z-index: 1;
+    width: 14rem;
+    height: 10rem;
+    overflow: auto;
+    border-radius: 8px;
+    background: var(--background-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.modalVisible{
+    display: block;
+}
+
+.header {
+    align-items: center;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerText{
+    height: 100%;
+}
+
+.buttons {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.buttonLight{
+    margin-bottom: 0.5rem;
+}
+
+.buttonDark{
+
+}

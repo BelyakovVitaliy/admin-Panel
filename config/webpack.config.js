@@ -586,8 +586,8 @@ module.exports = function (webpackEnv) {
       isEnvProduction &&
         shouldInlineRuntimeChunk &&
         new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime-.+[.]js/]),
-      // Makes some environment variables available in index.html.
-      // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
+      // Makes some environment variables availabel in index.html.
+      // The public URL is availabel as %PUBLIC_URL% in index.html, e.g.:
       // <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
       // It will be an empty string unless you specify "homepage"
       // in `package.json`, in which case it will be the pathname of that URL.
@@ -595,7 +595,7 @@ module.exports = function (webpackEnv) {
       // This gives some necessary context to module not found errors, such as
       // the requesting resource.
       new ModuleNotFoundPlugin(paths.appPath),
-      // Makes some environment variables available to the JS code, for example:
+      // Makes some environment variables availabel to the JS code, for example:
       // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
       // It is absolutely essential that NODE_ENV is set to production
       // during a production build.

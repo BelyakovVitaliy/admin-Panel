@@ -3,8 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.5rem;
-    margin-left: 1rem;
+    margin: 0.25rem 0.25rem 0.25rem 0.5rem;
 }
 
 .inputs {
@@ -15,10 +14,6 @@
 
 .inputFrom, .inputTo {
     width: 100%;
-    height: 1rem;
-    padding: 0.25rem 0.25rem 0.25rem 0.5rem;
-}
-
-.inputTo {
-    margin-left: 0.25rem;
+    height: 1.5rem;
+    margin-right: 0.25rem;
 }

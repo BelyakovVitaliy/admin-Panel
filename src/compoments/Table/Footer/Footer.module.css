@@ -1,13 +1,6 @@
 .footer {
     display: flex;
     flex-direction: row;
-    background: #EBF0F5;
+    background: var(--footer-background-color);
     justify-content:space-between;
-}
-
-.buttons {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0.4rem;
 }

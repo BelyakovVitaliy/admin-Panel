@@ -3,19 +3,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 8px 0;
 }
 
 .input {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 4px 4px 4px 8px;
-    background: #FFFFFF;
-    border: 1px solid #459DF5;
+    background: var(--background-color);
+    border: 1px solid var(--main-color);
     box-sizing: border-box;
     border-radius: 4px;
-    width: 192px;
-    height: 32px;
+    width: 100%;
+    height: 2rem;
 }
 

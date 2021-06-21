@@ -1,0 +1,44 @@
+.editItemForm {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    top: 2.5rem;
+    right: 0;
+    width: 40rem;
+    height: 65rem;
+    background: var(--background-color);
+}
+
+.caption {
+    background: var(--main-color);
+    padding: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.captionText {
+    color: var(--colored-button-text-color);
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    margin-left: 1rem;
+}
+
+.editFormBody {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin: 0 1rem 0 1rem
+}
+
+.inputElement {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.footerText {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}

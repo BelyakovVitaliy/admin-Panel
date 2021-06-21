@@ -1,9 +1,7 @@
 import React from "react";
-import {HEADER} from "../constants";
-import Row from "../Row/Row";
+import HeaderRow from "../Row/HeaderRow";
 
 
-export const Header = ({ columns, onCheckboxClick }) => {
-
-    return <Row type={HEADER} columns={columns} checkBoxHandler={onCheckboxClick}/>;
+export const Header = ({ columns, renderCheckBox }) => {
+    return <HeaderRow columns={columns} renderCheckBox={renderCheckBox}/>;
 }

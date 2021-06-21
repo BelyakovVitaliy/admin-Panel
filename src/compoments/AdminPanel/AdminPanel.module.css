@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     padding: 32px 48px 0;
+    background: var(--background-color);
 }
 
 .header {
@@ -25,7 +26,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
-
 }
 
 .fastFilterBlock {
@@ -34,13 +34,57 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
-
+    flex: 2;
 }
 
 .buttonInput {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    flex: 2;
 }
 
+.loadStatus {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+}
 
+.lightTheme {
+    --background-color: #FFFFFF;
+    --main-color: #459DF5;
+    --attention-color: #F53152;
+    --completed-status-color: #0FB864;
+    --delayed-status-text-color: black;
+    --delayed-status-ico-color: #FF8C56;
+    --new-status-color: #0FB864;
+    --canceled-status-color: gray;
+    --colored-button-text-color: #FFFFFF;
+    --button-text-color: #459DF5;
+    --border-color: #459DF5;
+    --extended-filter-background-color: #EBF0F5;
+    --row-border-color: #EBF0F5;
+    --cell-text-color: black;
+    --input-background-color: #FFFFFF;
+    --checkbox-color-filter: none;
+}
+.darkTheme {
+    --background-color: #2B2D33;
+    --main-color: #459DF5;
+    --attention-color: #F53152;
+    --completed-status-color: #0FB864;
+    --delayed-status-text-color: black;
+    --delayed-status-ico-color: #FF8C56;
+    --new-status-color: #0FB864;
+    --canceled-status-color: gray;
+    --colored-button-text-color: #1F2629;
+    --button-text-color: #459DF5;
+    --border-color: #459DF5;
+    --extended-filter-background-color: #1F2629;
+    --footer-background-color: #1F2629;
+    --row-border-color: #1F2629;
+    --cell-text-color: #BCC4CC;
+    --input-background-color: #2B2D33;
+    --checkbox-color-filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+}

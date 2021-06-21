@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import {combineReducers, createStore} from "redux";
-import {notificationReducer} from './compoments/NotificationBox/reducers'
 import App from "./App";
 import {adminPanelReducer} from "./compoments/redux/reducers";
 
 
-const store = createStore(combineReducers({notificationReducer, adminPanelReducer}), {});
+const store = createStore(combineReducers({adminPanelReducer}), {});
 
 ReactDOM.render(
     <Provider store={store}><App /></Provider>,

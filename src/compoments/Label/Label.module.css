@@ -1,8 +1,8 @@
-.lable {
+.label {
     font-family: Ubuntu;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
     line-height: 16px;
-    color: #459DF5;
+    color: var(--main-color);
 }

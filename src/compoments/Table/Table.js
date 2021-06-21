@@ -1,22 +1,21 @@
-import React, {Fragment} from "react";
+import React from "react";
 import {Header} from "./Header/Header";
 import {Data} from "./Grid/Grid";
-import {Footer} from "./Footer/Footer";
+import {AdminPanelFooter} from "./Footer/AdminPanelFooter";
 import styles from './Table.module.css'
 
-const Table = ( {columns, data, pageCount }) => {
-    const checkBoxHandler = props => {};
+const Table = ( {columns, data, customFooter, renderCheckBox }) => {
     return <div className={styles.table}>
             <Header
                 columns={columns}
-                onCheckboxClick={checkBoxHandler}
+                renderCheckBox={renderCheckBox}
             />
             <Data
                 columns={columns}
                 data={data}
-                onCheckboxClick={checkBoxHandler}
+                renderCheckBox={renderCheckBox}
             />
-            <Footer pageCount={pageCount}/>
+            {customFooter ? customFooter : <AdminPanelFooter/>}
     </div>
 };
 export default Table;

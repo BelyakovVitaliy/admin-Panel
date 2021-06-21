@@ -1,8 +1,8 @@
 import React from "react";
 import styles from './DrowDown.module.css'
-const DropDown = ({title, name, values, onChange}) => {
+const DropDown = ({title, name, value, values, disabled = false, onChange}) => {
 
-    const onFiledInput = ({target}) => {
+    const onChangeHandler = ({target}) => {
         onChange(name, 'value', target.value)
     };
 
@@ -10,7 +10,7 @@ const DropDown = ({title, name, values, onChange}) => {
     return (
         <div className={styles.dropDown}>
             <div className="dropDownBlock__title">{title}</div>
-            <select className={styles.input} onChange={onFiledInput}>
+            <select className={styles.input} value={value} disabled={disabled} onChange={onChangeHandler}>
                 {valuesWithEmpty.map(value => {
                     return <option>{value}</option>
                 })}
